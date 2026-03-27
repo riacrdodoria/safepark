@@ -1,0 +1,19 @@
+packages:
+  "recharts": "For rendering complex analytical charts on the dashboard and metrics pages"
+  "framer-motion": "For fluid layout animations, transitions, and premium interactive feel"
+  "date-fns": "For formatting timestamps and durations cleanly"
+  "lucide-react": "For UI icons throughout the platform"
+  "clsx": "For conditional class names"
+  "tailwind-merge": "For conditional class names"
+
+images:
+  - path: "artifacts/safepark/public/images/landing-hero.png"
+    description: "High-tech operations center interface overlay showing glowing data points, security camera grids, and analytical dashboard elements on a deep navy graphite background"
+    aspect_ratio: "16:9"
+  - path: "artifacts/safepark/public/images/parking-bg.png"
+    description: "Abstract, top-down schematic blueprint of a parking lot structure with glowing neon lines representing vehicle paths and detection zones"
+    aspect_ratio: "16:9"
+
+notes:
+  - Mock data is injected into TanStack Query initialData to ensure the platform demonstrates a populated, premium state even without a backend.
+  - The UI simulates a mission-critical operations center using a deep graphite and emerald green color palette.
