@@ -1,0 +1,571 @@
+Quero que você crie a interface, a identidade visual e a experiência de produto de um software SaaS chamado Safe Park.
+
+# 1. Visão geral do produto
+
+Safe Park é uma plataforma inteligente de monitoramento e segurança para estacionamentos. O sistema conecta-se a múltiplas câmeras IP distribuídas pelo pátio, entradas, saídas, acessos de pedestres, cancelas e áreas internas. A partir dessas imagens, o sistema analisa comportamentos, movimentações e eventos operacionais ou de segurança em tempo real.
+
+O objetivo do produto é substituir ou reduzir a dependência de vigilância humana constante, ajudando operadores a identificar automaticamente situações anormais ou suspeitas, como:
+- arrombamentos ou tentativa de violação de veículos
+- circulação anômala de pessoas no pátio
+- pessoas que entram no estacionamento sem vínculo claro com um carro
+- pessoas que passam por várias áreas ou vários carros sem comportamento compatível com um cliente normal
+- intrusão em áreas restritas
+- batidas ou incidentes entre veículos
+- fluxo irregular de pessoas e carros
+- quantidade de carros no pátio
+- ocupação por área, setor ou vaga
+- eventos acompanhados ao longo de várias câmeras
+
+O produto deve parecer um software real, premium, B2B, pronto para vender para estacionamentos, redes de estacionamentos, operadores de segurança, empresas de monitoramento e franquias.
+
+# 2. Conceito central do sistema
+
+O Safe Park não é apenas um painel de câmeras. Ele é um sistema de inteligência operacional que:
+- recebe streams de múltiplas câmeras
+- entende zonas e setores do estacionamento
+- acompanha o deslocamento de pessoas e veículos entre câmeras
+- relaciona comportamento ao contexto
+- gera eventos automáticos
+- oferece explicações claras para cada alerta
+
+O sistema deve considerar que o estacionamento possui várias câmeras, e que muitas vezes uma pessoa ou um veículo desaparece em uma câmera e reaparece em outra. Portanto, a experiência do produto deve comunicar claramente a ideia de:
+- continuidade entre câmeras
+- deslocamento entre zonas
+- rastreamento multi-câmera
+- trilha de eventos por câmera
+- entendimento do estacionamento como um ambiente contínuo, e não câmeras isoladas
+
+# 3. Nome do produto
+
+Nome: Safe Park
+
+Subtítulo sugerido:
+Monitoramento inteligente para estacionamentos com visão computacional
+
+Outras frases que podem aparecer no produto:
+- Segurança operacional em tempo real
+- Inteligência para pátios e estacionamentos
+- Veja além das câmeras
+- Eventos automáticos, menos vigilância manual
+- Detecção de comportamento anômalo em múltiplas câmeras
+
+# 4. Objetivo deste trabalho no Replit
+
+Quero que você crie a “cara” completa do Safe Park:
+- identidade visual
+- design system
+- páginas
+- fluxos
+- navegação
+- dashboard
+- experiência do operador
+- experiência de configuração
+- visualização multi-câmera
+- visualização de eventos
+- visualização de rastreamento entre câmeras
+- landing page comercial
+
+O resultado deve parecer um produto real e sofisticado, com dados mockados coerentes.
+
+# 5. Público-alvo
+
+O design deve conversar com:
+- dono de estacionamento
+- operador de monitoramento
+- supervisor de segurança
+- gestor de operações
+- administrador de rede de estacionamentos
+- empresa de monitoramento terceirizado
+- rede/franquia multiunidade
+
+# 6. Direção visual
+
+Quero um visual:
+- premium
+- moderno
+- corporativo
+- tecnológico
+- confiável
+- operacional
+- elegante
+- com aparência de software de missão crítica
+
+Evitar:
+- aparência infantil
+- visual genérico de dashboard de template
+- excesso de neon ou sci-fi exagerado
+- poluição visual
+- cara de app de consumidor final
+
+Preferências:
+- dark mode como padrão
+- ótimo contraste
+- legibilidade excelente
+- interface limpa
+- estética de centro de operações
+- sensação de controle, precisão e inteligência
+- elementos visuais que remetam a vigilância, fluxo, mapas, zonas, alertas e rastreamento
+
+# 7. Paleta e branding
+
+Crie uma paleta coerente para o Safe Park.
+
+Sugestão de direção:
+- fundo escuro grafite ou azul muito escuro
+- cores neutras sofisticadas
+- destaque em verde de segurança/controlado
+- amarelo para atenção
+- vermelho para crítico
+- azul/ciano discreto para informação técnica
+- cinzas elegantes para superfícies e divisões
+
+A marca Safe Park deve transmitir:
+- segurança
+- visão
+- monitoramento
+- mobilidade
+- estacionamento
+- confiança
+
+Proponha:
+- logo wordmark simples e profissional
+- ícone da marca
+- sistema de cores
+- tokens de interface
+- tipografia
+- badges
+- níveis de severidade
+- estados visuais de câmera, alerta e tracking
+
+# 8. Estrutura funcional do produto
+
+O Safe Park deve ser desenhado como uma plataforma com os seguintes módulos:
+
+1. Dashboard operacional
+2. Monitoramento de câmeras
+3. Eventos e incidentes
+4. Mapa do estacionamento
+5. Rastreamento de pessoas e veículos
+6. Continuidade entre câmeras
+7. Regras e sensibilidade do sistema
+8. Cadastro de câmeras IP
+9. Gestão de unidades/sites
+10. Configurações gerais
+11. Usuários e permissões
+12. Landing page comercial
+
+# 9. Telas que quero
+
+Crie todas as telas abaixo.
+
+## 9.1 Login
+Tela elegante, corporativa e premium.
+Elementos:
+- logo Safe Park
+- subtítulo
+- campos de login
+- lembrar acesso
+- recuperar senha
+- CTA de demo
+- ilustração ou composição visual ligada a monitoramento e estacionamento
+
+## 9.2 Dashboard principal
+Essa é a tela principal do operador.
+
+Quero:
+- KPIs no topo:
+  - carros no pátio
+  - taxa de ocupação
+  - eventos críticos hoje
+  - eventos em análise
+  - câmeras online
+  - câmeras offline
+  - pessoas sem origem conhecida
+- gráfico de eventos por tipo
+- gráfico de eventos por horário
+- status operacional por unidade
+- painel de alertas recentes
+- grid resumido de câmeras
+- mapa resumido do pátio
+- indicadores de saúde do sistema
+- atividade recente
+- visão consolidada do estacionamento
+
+Quero que essa tela comunique que o sistema entende o pátio inteiro, e não apenas imagens soltas.
+
+## 9.3 Tela de monitoramento de câmeras
+Tela focada em visualização ao vivo e navegação entre câmeras.
+
+Quero:
+- grid multi-câmera
+- filtros por unidade, setor, zona, status e tipo de câmera
+- pesquisa por câmera
+- modo single view
+- modo 2x2
+- modo 3x3
+- destaque para câmera selecionada
+- badges online/offline
+- indicação de FPS, resolução e latência simuladas
+- overlays simuladas de detecção
+- mini timeline de eventos por câmera
+- opção de seguir um evento em várias câmeras
+
+Essa tela deve incluir o conceito de continuidade entre câmeras.
+Exemplo:
+uma pessoa foi vista na câmera Entrada 01, depois apareceu na câmera Setor B, depois na câmera Corredor Leste.
+Quero que a interface mostre essa narrativa visualmente.
+
+## 9.4 Tela de eventos
+Essa tela é para investigar todos os incidentes detectados.
+
+Quero:
+- tabela profissional e elegante
+- filtros avançados:
+  - tipo de evento
+  - severidade
+  - unidade
+  - câmera
+  - zona
+  - intervalo de horário
+  - status
+- snapshot do evento
+- câmera de origem
+- câmeras relacionadas
+- confiança do sistema
+- tempo de duração
+- explicação curta do motivo do alerta
+- status do evento:
+  - novo
+  - em análise
+  - escalado
+  - resolvido
+  - falso positivo
+- busca textual
+- paginação
+
+## 9.5 Tela de detalhe do evento
+Essa tela é uma das mais importantes.
+
+Quero:
+- player ou área principal para replay
+- snapshot principal
+- severidade
+- evento descrito em linguagem clara
+- explicação do sistema sobre o porquê do alerta
+- metadados
+- unidade
+- zona
+- câmera inicial
+- câmeras relacionadas
+- hora inicial
+- hora final
+- duração
+- nível de confiança
+- objetos detectados envolvidos
+- trilha do evento entre câmeras
+- timeline do evento
+- ações do operador:
+  - marcar como falso positivo
+  - escalonar
+  - adicionar observação
+  - exportar evidência
+  - vincular a ocorrência
+- log de ações humanas
+- sugestão automática de classificação do incidente
+
+Quero muito que essa tela mostre a ideia de evento multi-câmera. Exemplo:
+“Pessoa detectada saindo do carro na câmera Pátio Norte 02, deslocando-se para Setor C visto na câmera Corredor C1, aproximando-se de outros veículos na câmera C3”.
+
+## 9.6 Tela de mapa do estacionamento
+Quero uma tela que represente o estacionamento como um ambiente físico.
+
+Elementos:
+- mapa esquemático do pátio
+- áreas
+- setores
+- vagas
+- entradas e saídas
+- cancelas
+- corredores
+- áreas restritas
+- posicionamento das câmeras
+- linhas de cobertura visual
+- fluxo de veículos
+- fluxo de pedestres
+- heatmap de eventos
+- status por zona
+- ocupação por setor
+- alertas por área
+
+Essa tela é fundamental para o produto, porque ajuda a mostrar o diferencial de inteligência espacial.
+
+## 9.7 Tela de rastreamento de pessoas e veículos
+Quero uma tela dedicada ao conceito de tracking inteligente.
+
+Elementos:
+- cards/lista de pessoas rastreadas
+- cards/lista de veículos rastreados
+- associação pessoa-veículo
+- nível de confiança da associação
+- carro de origem provável
+- status:
+  - vinculado
+  - sem origem conhecida
+  - em circulação anômala
+  - retornou ao carro
+  - perdeu rastreio
+- última câmera vista
+- rota recente
+- câmeras pelas quais passou
+- linha do tempo de movimentação
+- zonas visitadas
+- veículos visitados
+- tempo fora do carro de origem
+
+Essa tela deve comunicar claramente que o sistema acompanha o deslocamento entre câmeras, e que entende o comportamento ao longo do espaço.
+
+## 9.8 Tela de continuidade entre câmeras
+Quero uma tela ou módulo visual específico para mostrar como o sistema compreende o tráfego entre câmeras.
+
+Essa funcionalidade é um diferencial e deve ficar muito clara.
+
+Elementos:
+- grafo ou fluxo entre câmeras
+- sequências recentes:
+  - Câmera Entrada 01 → Câmera Rampa A → Câmera Setor B → Câmera Saída 02
+- tempo entre aparições
+- objetos rastreados
+- eventos multi-câmera
+- confiança da continuidade
+- mapa com trajetória provável
+- opção de clicar em um evento e ver o caminho entre câmeras
+
+Essa tela pode ter visual de timeline + grafo + mapa.
+
+## 9.9 Tela de regras do sistema
+Quero uma interface de configuração de regras simples e profissional.
+
+Permitir configurar:
+- tempo máximo aceitável fora do carro
+- distância máxima do carro de origem
+- visita a múltiplos veículos
+- intrusão em zona restrita
+- pedestre sem origem conhecida
+- veículo em área proibida
+- permanência anômala
+- batida suspeita
+- sensibilidade do sistema
+
+Também incluir:
+- perfis de sensibilidade:
+  - conservador
+  - balanceado
+  - agressivo
+- explicações curtas para cada regra
+- sliders
+- toggles
+- parâmetros por câmera
+- parâmetros por zona
+- parâmetros por unidade
+
+## 9.10 Tela de onboarding de câmeras
+Quero um wizard de cadastro de câmeras IP.
+
+Passos:
+1. adicionar nome da câmera
+2. selecionar unidade/site
+3. informar RTSP/ONVIF
+4. credenciais
+5. testar conexão
+6. visualizar preview
+7. definir tipo de câmera:
+   - entrada
+   - saída
+   - pátio
+   - corredor
+   - área restrita
+   - caixa/cabine
+8. associar câmera a uma zona do mapa
+9. definir câmeras vizinhas ou conectadas operacionalmente
+10. salvar
+
+Importante:
+como o sistema considera continuidade entre câmeras, o onboarding deve permitir indicar relações como:
+- esta câmera costuma anteceder a câmera X
+- esta câmera cobre continuação do fluxo da câmera Y
+- esta câmera cobre o corredor entre dois setores
+
+## 9.11 Tela de unidades / sites
+Quero uma visão multi-site.
+
+Elementos:
+- lista de unidades
+- saúde operacional
+- quantidade de câmeras
+- eventos por unidade
+- ocupação média
+- incidentes críticos
+- uptime
+- ranking de risco
+- benchmark entre unidades
+
+## 9.12 Tela de configurações gerais
+Elementos:
+- usuários
+- perfis de acesso
+- integrações
+- alertas por email/WhatsApp/Telegram
+- retenção de vídeos
+- branding white-label
+- permissões
+- políticas por unidade
+- audit log
+
+## 9.13 Landing page comercial
+Quero uma landing page forte e bonita para vender o produto.
+
+Seções:
+- hero section
+- proposta de valor
+- como funciona
+- diferenciais
+- benefícios
+- módulos do sistema
+- multi-câmera e inteligência espacial
+- exemplos de eventos detectados
+- prints/mockups do produto
+- FAQ
+- CTA para demo
+
+# 10. Casos de uso que devem aparecer no mock
+Use dados e cenários coerentes com estacionamento.
+
+Exemplos:
+- Pessoa vinculada ao carro saiu pela câmera Pátio A1, reapareceu em Câmera Corredor B2 e depois foi detectada próxima a outro veículo em Câmera Setor B3.
+- Pessoa sem origem conhecida apareceu em Câmera Lateral Norte sem passagem por entrada autorizada.
+- Veículo entrou na zona errada.
+- Suspeita de colisão entre veículos no Setor D.
+- Fluxo de carros acima do normal na entrada principal.
+- Alta ocupação no Setor Sul.
+- Câmera Pátio Norte 03 offline.
+
+# 11. Padrões de interface que quero
+- sidebar principal bem feita
+- topbar com busca global e status
+- cards informativos
+- tabelas elegantes
+- gráficos claros
+- badges de severidade
+- estados vazios inteligentes
+- tooltips explicativos
+- painéis laterais
+- modais elegantes
+- timelines
+- mapas esquemáticos
+- visual de rastreamento
+- visões detalhadas de evento
+
+# 12. Navegação sugerida
+Estruture a navegação mais ou menos assim:
+
+Sidebar:
+- Dashboard
+- Câmeras
+- Eventos
+- Mapa
+- Rastreamento
+- Continuidade entre câmeras
+- Regras
+- Sites
+- Configurações
+
+Subitens podem existir.
+
+# 13. Sistema de design
+Quero que você também proponha um design system consistente com:
+- cores
+- tipografia
+- spacing
+- sombras
+- bordas
+- ícones
+- estados
+- severidade
+- componentes reutilizáveis
+- tokens de design
+
+Crie componentes como:
+- camera card
+- alert badge
+- severity pill
+- timeline item
+- tracking card
+- association confidence bar
+- zone map card
+- event row
+- camera health badge
+- occupancy gauge
+- system status tile
+
+# 14. Dados mockados
+Use dados fictícios coerentes, por exemplo:
+- nomes de câmeras reais e críveis
+- nomes de setores
+- tipos de evento
+- tempos
+- severidade
+- confiança
+- ocupação
+- relação entre câmeras
+
+As câmeras podem ter nomes como:
+- Entrada Principal 01
+- Rampa Norte 02
+- Setor A Leste
+- Corredor B1
+- Saída Sul 01
+- Pátio Coberto 03
+
+# 15. Requisitos técnicos do protótipo
+- interface web responsiva
+- visual pronto para virar produto real
+- navegação entre telas
+- dados mockados realistas
+- código organizado
+- componentes reutilizáveis
+- frontend polido
+- aparência premium
+- protótipo com consistência visual forte
+
+# 16. O que quero no final
+Entregue:
+- estrutura completa das telas
+- identidade visual do Safe Park
+- design system
+- conteúdo mockado coerente
+- navegação pronta
+- componentes reutilizáveis
+- experiência que demonstre claramente o diferencial do sistema
+- foco especial em múltiplas câmeras e continuidade entre câmeras
+
+# 17. Prioridades principais
+As prioridades mais importantes deste trabalho são:
+1. parecer um produto premium e vendável
+2. comunicar claramente monitoramento inteligente
+3. comunicar rastreamento entre múltiplas câmeras
+4. demonstrar eventos e comportamento, não apenas vídeo
+5. criar uma interface que passe confiança para uso em segurança operacional
+
+# 18. Importante
+Não quero apenas um dashboard genérico.
+Quero uma identidade de produto real.
+Quero que o Safe Park pareça um software de segurança inteligente de nova geração para estacionamentos.
+
+Pense como designer de produto B2B e de centro de operações.
+A experiência deve transmitir:
+- controle
+- vigilância
+- clareza
+- rastreabilidade
+- inteligência operacional
+- confiança
