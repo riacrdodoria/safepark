@@ -1,9 +1,11 @@
 import { AppLayout } from "@/components/layout/app-layout";
 import { Shield, Settings, AlertTriangle, Info } from "lucide-react";
 import { useState } from "react";
+import { useRules } from "@/hooks/use-rules";
 
 export default function RulesPage() {
   const [profile, setProfile] = useState<'conservador' | 'balanceado' | 'agressivo'>('balanceado');
+  const { data: rules } = useRules();
 
   return (
     <AppLayout>
@@ -38,12 +40,16 @@ export default function RulesPage() {
         <div className="space-y-4">
           <h3 className="text-lg font-medium text-foreground">Regras Específicas</h3>
           
-          {[
+          {(rules?.length ? rules.map((rule) => ({
+            title: rule.rule_key.replaceAll('_', ' '),
+            desc: `Configuração carregada do backend para ${rule.site_id}.`,
+            defaultVal: JSON.stringify(rule.config),
+          })) : [
             { title: "Pessoa Sem Origem", desc: "Tempo máximo que alguém pode circular sem ter saído de um carro conhecido.", defaultVal: "15 min" },
             { title: "Permanência ao lado do veículo", desc: "Tempo máximo permitido antes de gerar alerta de anomalia.", defaultVal: "5 min" },
             { title: "Veículo em circulação repetida", desc: "Passagens pela mesma câmera sem estacionar.", defaultVal: "3 vezes" },
-          ].map((rule, i) => (
-            <div key={i} className="bg-card border border-border p-5 rounded-xl flex items-start justify-between">
+          ]).map((rule, i) => (
+            <div key={i} className="bg-card border border-border p-5 rounded-xl flex items-start justify-between gap-4">
               <div>
                 <h4 className="font-medium text-foreground mb-1">{rule.title}</h4>
                 <p className="text-sm text-muted-foreground flex items-center gap-2">
@@ -51,7 +57,7 @@ export default function RulesPage() {
                 </p>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-sm font-mono bg-muted px-2 py-1 rounded">{rule.defaultVal}</span>
+                <span className="max-w-xs overflow-hidden text-ellipsis text-sm font-mono bg-muted px-2 py-1 rounded whitespace-nowrap">{rule.defaultVal}</span>
                 <button className="p-2 hover:bg-muted rounded text-muted-foreground hover:text-foreground">
                   <Settings className="w-4 h-4" />
                 </button>
