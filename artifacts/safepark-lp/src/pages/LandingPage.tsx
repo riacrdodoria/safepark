@@ -69,9 +69,7 @@ export default function LandingPage() {
       <header className="fixed top-1 left-0 right-0 z-40 bg-[#1c2333]/96 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded bg-amber-500 flex items-center justify-center">
-              <span className="text-[10px] font-black text-white">SP</span>
-            </div>
+            <img src={`${BASE}images/logo.png`} alt="SafePark" className="w-8 h-8 rounded object-cover" />
             <span className="text-xl font-display font-bold tracking-tight text-white">
               SAFE<span className="text-amber-400">PARK</span>
             </span>
@@ -537,9 +535,7 @@ export default function LandingPage() {
               </div>
 
               <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center shrink-0">
-                  <span className="text-[10px] font-black text-black leading-none">SP</span>
-                </div>
+                <img src={`${BASE}images/logo.png`} alt="SafePark" className="w-10 h-10 rounded-lg object-cover shrink-0" />
                 <div>
                   <p className="text-white/80 text-sm font-semibold">App exclusivo para operadores cadastrados</p>
                   <p className="text-white/35 text-xs">Disponível para iOS e Android via Expo Go</p>
@@ -895,9 +891,7 @@ export default function LandingPage() {
       <footer className="py-12 px-6 border-t border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded bg-amber-500 flex items-center justify-center">
-              <span className="text-[9px] font-black text-white">SP</span>
-            </div>
+            <img src={`${BASE}images/logo.png`} alt="SafePark" className="w-7 h-7 rounded object-cover" />
             <span className="font-display font-bold text-gray-900">
               SAFE<span className="text-amber-500">PARK</span>
             </span>

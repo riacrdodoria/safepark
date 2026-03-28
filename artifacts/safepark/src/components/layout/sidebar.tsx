@@ -32,9 +32,7 @@ export function Sidebar() {
     <div className="w-64 h-screen bg-sidebar border-r border-sidebar-border flex flex-col shrink-0 flex-shrink-0">
       <div className="h-16 flex items-center px-6 border-b border-sidebar-border">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-primary flex items-center justify-center text-primary-foreground font-display font-bold text-xl">
-            SP
-          </div>
+          <img src="/images/logo.png" alt="SafePark" className="w-8 h-8 rounded object-cover" />
           <span className="font-display font-bold text-xl tracking-wider text-sidebar-foreground">
             SAFE<span className="text-primary">PARK</span>
           </span>
