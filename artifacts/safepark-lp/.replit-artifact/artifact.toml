@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/safepark-lp/"
+title = "SafePark — Landing Page"
+version = "1.0.0"
+id = "artifacts/safepark-lp"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/safepark-lp/" ]
+localPort = 20805
+
+[services.development]
+run = "pnpm --filter @workspace/safepark-lp run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/safepark-lp", "run", "build" ]
+publicDir = "artifacts/safepark-lp/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20805"
+BASE_PATH = "/safepark-lp/"
