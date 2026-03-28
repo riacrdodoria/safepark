@@ -1,7 +1,12 @@
 import { AppLayout } from "@/components/layout/app-layout";
 import { GitMerge, MapPin, Video, ArrowRight } from "lucide-react";
+import { useCameraFlow } from "@/hooks/use-camera-flow";
 
 export default function ContinuityPage() {
+  const { data } = useCameraFlow();
+  const links = data?.links ?? [];
+  const activeTrail = data?.recent_transitions?.[0];
+
   return (
     <AppLayout>
       <div className="h-full flex flex-col space-y-6">
@@ -16,16 +21,15 @@ export default function ContinuityPage() {
               <h3 className="font-medium">Cadeias de Rastreio Recentes</h3>
             </div>
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
-              {[1,2,3].map(i => (
-                <div key={i} className={`p-4 rounded-lg border cursor-pointer transition-all ${i===1 ? 'border-primary bg-primary/5' : 'border-border bg-card hover:bg-muted'}`}>
+              {links.map((link, i) => (
+                <div key={link.id} className={`p-4 rounded-lg border cursor-pointer transition-all ${i===0 ? 'border-primary bg-primary/5' : 'border-border bg-card hover:bg-muted'}`}>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-mono text-sm font-bold text-foreground">Seq-{4920+i}</span>
-                    <span className="text-xs text-muted-foreground">Há {i*12} min</span>
+                    <span className="font-mono text-sm font-bold text-foreground">Link-{link.id.slice(0, 6)}</span>
+                    <span className="text-xs text-muted-foreground">{link.expected_travel_time_min}s-{link.expected_travel_time_max}s</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-muted-foreground mt-3">
-                    <MapPin className="w-3 h-3 text-primary" /> Entrada 01
-                    <ArrowRight className="w-3 h-3" /> Pátio Norte
-                    <ArrowRight className="w-3 h-3" /> Setor C1
+                    <MapPin className="w-3 h-3 text-primary" /> {link.source_camera_id}
+                    <ArrowRight className="w-3 h-3" /> {link.target_camera_id}
                   </div>
                 </div>
               ))}
@@ -42,8 +46,8 @@ export default function ContinuityPage() {
                      <Video className="w-6 h-6 text-muted-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm">Entrada 01</h4>
-                    <p className="text-xs text-muted-foreground font-mono mt-1">14:22:10 • Confiança: 98%</p>
+                    <h4 className="font-medium text-sm">{links[0]?.source_camera_id ?? 'Entrada 01'}</h4>
+                    <p className="text-xs text-muted-foreground font-mono mt-1">{activeTrail ? new Date(activeTrail.started_at).toLocaleTimeString('pt-BR') : '14:22:10'} • Confiança: {Math.round((links[0]?.transition_confidence ?? 0.98) * 100)}%</p>
                   </div>
                 </div>
                 
@@ -56,8 +60,8 @@ export default function ContinuityPage() {
                      <Video className="w-6 h-6 text-muted-foreground" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm">Pátio Norte A1</h4>
-                    <p className="text-xs text-muted-foreground font-mono mt-1">14:22:55 • Confiança: 95%</p>
+                    <h4 className="font-medium text-sm">{links[1]?.source_camera_id ?? links[0]?.target_camera_id ?? 'Pátio Norte A1'}</h4>
+                    <p className="text-xs text-muted-foreground font-mono mt-1">{activeTrail ? new Date(activeTrail.started_at).toLocaleTimeString('pt-BR') : '14:22:55'} • Confiança: {Math.round((links[1]?.transition_confidence ?? 0.95) * 100)}%</p>
                   </div>
                 </div>
 
@@ -70,8 +74,8 @@ export default function ContinuityPage() {
                      <Video className="w-6 h-6 text-primary animate-pulse" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm text-primary">Setor C1 (Posição Atual)</h4>
-                    <p className="text-xs text-muted-foreground font-mono mt-1">14:25:05 • Confiança: 91%</p>
+                    <h4 className="font-medium text-sm text-primary">{links[links.length - 1]?.target_camera_id ?? 'Setor C1'} (Posição Atual)</h4>
+                    <p className="text-xs text-muted-foreground font-mono mt-1">{activeTrail ? new Date(activeTrail.started_at).toLocaleTimeString('pt-BR') : '14:25:05'} • Confiança: {Math.round((activeTrail?.confidence ?? 0.91) * 100)}%</p>
                   </div>
                 </div>
              </div>

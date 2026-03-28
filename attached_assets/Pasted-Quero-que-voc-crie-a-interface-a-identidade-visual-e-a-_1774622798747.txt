@@ -49,7 +49,7 @@ Outras frases que podem aparecer no produto:
 - Eventos automáticos, menos vigilância manual
 - Detecção de comportamento anômalo em múltiplas câmeras
 
-# 4. Objetivo deste trabalho no Replit
+# 4. Objetivo deste trabalho no frontend
 
 Quero que você crie a “cara” completa do Safe Park:
 - identidade visual

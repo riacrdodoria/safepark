@@ -1,7 +1,10 @@
 import { AppLayout } from "@/components/layout/app-layout";
 import { Users, BellRing, Database, Paintbrush } from "lucide-react";
+import { useSystemStatus } from "@/hooks/use-system-status";
 
 export default function SettingsPage() {
+  const { data: system } = useSystemStatus();
+
   return (
     <AppLayout>
       <div className="max-w-4xl mx-auto space-y-8">
@@ -45,11 +48,11 @@ export default function SettingsPage() {
                <div className="pt-4 flex items-center justify-between border-t border-border">
                  <div>
                    <h4 className="text-sm font-medium text-foreground">Modo Escuro Forçado</h4>
-                   <p className="text-xs text-muted-foreground">Recomendado para centros de operação</p>
+                   <p className="text-xs text-muted-foreground">Recomendado para centros de operação • API {system?.api ?? 'demo'} • DB {system?.database ?? 'demo'}</p>
                  </div>
-                 <div className="w-12 h-6 bg-primary rounded-full relative cursor-pointer">
-                   <div className="absolute right-1 top-1 w-4 h-4 bg-background rounded-full"></div>
-                 </div>
+                  <div className="w-12 h-6 bg-primary rounded-full relative cursor-pointer">
+                    <div className="absolute right-1 top-1 w-4 h-4 bg-background rounded-full"></div>
+                  </div>
                </div>
             </div>
 
