@@ -80,6 +80,10 @@ export default function LandingPage() {
             <a href="#solucao" className="hover:text-white transition-colors">A Solução</a>
             <a href="#segmentos" className="hover:text-white transition-colors">Segmentos</a>
             <a href="#como-funciona" className="hover:text-white transition-colors">Como Funciona</a>
+            <a href="#app-operador" className="hover:text-white transition-colors flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              App Operador
+            </a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-3">
@@ -479,6 +483,230 @@ export default function LandingPage() {
                 <p className="text-sm text-gray-500 leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── APP OPERADOR MOCKUP ── */}
+      <section id="app-operador" className="py-28 px-6 bg-[#111827] relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(circle at 80% 50%, rgba(245,158,11,0.07) 0%, transparent 60%)" }} />
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(circle at 15% 80%, rgba(245,158,11,0.04) 0%, transparent 50%)" }} />
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* TEXT SIDE */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-semibold mb-6 uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                SafePark Operador · App Mobile
+              </div>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                Alerta em tempo real{" "}
+                <span className="text-amber-400">na palma do operador</span>
+              </h2>
+              <p className="text-white/55 text-lg leading-relaxed mb-8">
+                O SafePark Operador é o app exclusivo para a equipe de campo. Quando a IA detecta um comportamento
+                suspeito, o operador recebe o alerta instantaneamente — com a imagem da câmera, descrição do evento
+                e opção de confirmar ou descartar com um toque.
+              </p>
+
+              <div className="space-y-4 mb-10">
+                {[
+                  { icon: Eye, label: "Detecção em tempo real", desc: "Alertas gerados por visão computacional chegam em segundos, com imagem e contexto." },
+                  { icon: Zap, label: "Resposta com um toque", desc: "Confirmar ocorrência ou descartar falso alarme — sem fricção, sem demora." },
+                  { icon: Shield, label: "Histórico e rastreabilidade", desc: "Todo evento respondido fica registrado com operador, horário e decisão tomada." },
+                  { icon: Activity, label: "Status das câmeras ao vivo", desc: "Visualize quais câmeras estão online e o volume de eventos por período." },
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i * 0.15}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/30 transition-colors group"
+                  >
+                    <div className="w-9 h-9 rounded-lg bg-amber-500/15 border border-amber-500/25 flex items-center justify-center shrink-0 group-hover:bg-amber-500/20 transition-colors">
+                      <item.icon className="w-4 h-4 text-amber-400" />
+                    </div>
+                    <div>
+                      <p className="text-white/90 font-semibold text-sm mb-0.5">{item.label}</p>
+                      <p className="text-white/40 text-xs leading-relaxed">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-lg bg-amber-500 flex items-center justify-center shrink-0">
+                  <span className="text-[10px] font-black text-black leading-none">SP</span>
+                </div>
+                <div>
+                  <p className="text-white/80 text-sm font-semibold">App exclusivo para operadores cadastrados</p>
+                  <p className="text-white/35 text-xs">Disponível para iOS e Android via Expo Go</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* PHONE MOCKUP SIDE */}
+            <motion.div
+              className="flex justify-center lg:justify-end"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <div className="relative">
+                {/* Ambient glow */}
+                <div className="absolute inset-0 scale-110 rounded-[40px] blur-3xl pointer-events-none"
+                  style={{ background: "radial-gradient(ellipse, rgba(245,158,11,0.12) 0%, transparent 70%)" }} />
+
+                {/* Floating badges */}
+                <motion.div
+                  className="absolute -left-14 top-16 bg-[#1c2333] border border-red-500/30 rounded-xl px-3 py-2 flex items-center gap-2 shadow-lg z-20"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ repeat: Infinity, duration: 3.2, ease: "easeInOut" }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                  <span className="text-red-400 text-xs font-bold">CRÍTICO</span>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -right-10 top-1/3 bg-[#1c2333] border border-amber-500/30 rounded-xl px-3 py-2 flex items-center gap-2 shadow-lg z-20"
+                  animate={{ y: [0, 6, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut", delay: 0.5 }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-amber-400" />
+                  <span className="text-amber-400 text-xs font-bold">IA Detectou</span>
+                </motion.div>
+
+                <motion.div
+                  className="absolute -left-8 bottom-28 bg-[#1c2333] border border-green-500/30 rounded-xl px-3 py-2 flex items-center gap-2 shadow-lg z-20"
+                  animate={{ y: [0, -4, 0] }}
+                  transition={{ repeat: Infinity, duration: 3.6, ease: "easeInOut", delay: 1 }}
+                >
+                  <CheckCircle2 className="w-3 h-3 text-green-400" />
+                  <span className="text-green-400 text-xs font-bold">Confirmado</span>
+                </motion.div>
+
+                {/* Phone frame */}
+                <div className="relative w-[280px] rounded-[40px] bg-[#0a0d12] border-[3px] border-[#2a2f3a] shadow-2xl overflow-hidden"
+                  style={{ boxShadow: "0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)" }}
+                >
+                  {/* Notch */}
+                  <div className="flex justify-center pt-3 pb-1 px-4">
+                    <div className="w-24 h-6 rounded-full bg-[#0a0d12] border border-[#1a1f2a] flex items-center justify-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-[#1e2230]" />
+                      <div className="w-10 h-1.5 rounded-full bg-[#1e2230]" />
+                    </div>
+                  </div>
+
+                  {/* Status bar */}
+                  <div className="flex items-center justify-between px-5 py-1.5">
+                    <span className="text-white/60 text-[10px] font-medium">9:41</span>
+                    <div className="flex items-center gap-1">
+                      <div className="flex gap-0.5 items-end h-3">
+                        {[2,3,4,5].map(h => <div key={h} style={{height: `${h*2}px`}} className="w-1 bg-white/50 rounded-sm" />)}
+                      </div>
+                      <div className="w-5 h-2.5 rounded-sm border border-white/30 flex items-center px-0.5">
+                        <div className="h-full w-3/4 bg-white/70 rounded-sm" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* App UI */}
+                  <div className="px-4 pt-1 pb-0">
+                    {/* Header */}
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <p className="text-white text-lg font-black">Alertas Ativos</p>
+                        <p className="text-white/40 text-[10px]">3 aguardando resposta</p>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/40 flex items-center justify-center">
+                        <span className="text-red-400 text-xs font-black">3</span>
+                      </div>
+                    </div>
+
+                    {/* Alert card 1 — CRÍTICO */}
+                    <div className="mb-2.5 rounded-xl border border-white/10 overflow-hidden bg-[#161b22] flex">
+                      <div className="w-1 bg-red-500 shrink-0" />
+                      <div className="p-2.5 flex-1">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-1 bg-red-500/20 px-1.5 py-0.5 rounded-md">
+                            <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                            <span className="text-red-400 text-[9px] font-black">CRÍTICO</span>
+                          </div>
+                          <span className="text-white/30 text-[9px]">2min atrás</span>
+                        </div>
+                        <p className="text-white text-xs font-bold mb-0.5">Pessoa em zona restrita</p>
+                        <p className="text-white/30 text-[9px] mb-2">RAMPA NORTE 02</p>
+                        <div className="flex gap-2">
+                          <img src={`${BASE}images/alert1.png`} className="w-16 h-11 rounded-md object-cover" />
+                          <p className="text-white/45 text-[9px] leading-tight">Indivíduo na área restrita. 4m32s. Comportamento atípico detectado.</p>
+                        </div>
+                        <div className="flex justify-end mt-1.5">
+                          <span className="text-amber-400 text-[9px] font-semibold">Toque para responder →</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Alert card 2 — ALTO */}
+                    <div className="mb-2.5 rounded-xl border border-white/10 overflow-hidden bg-[#161b22] flex">
+                      <div className="w-1 bg-orange-500 shrink-0" />
+                      <div className="p-2.5 flex-1">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-1 bg-orange-500/20 px-1.5 py-0.5 rounded-md">
+                            <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                            <span className="text-orange-400 text-[9px] font-black">ALTO</span>
+                          </div>
+                          <span className="text-white/30 text-[9px]">7min atrás</span>
+                        </div>
+                        <p className="text-white text-xs font-bold mb-0.5">Veículo parado suspeito</p>
+                        <p className="text-white/30 text-[9px] mb-2">PÁTIO COBERTO 03</p>
+                        <div className="flex gap-2">
+                          <img src={`${BASE}images/alert2.png`} className="w-16 h-11 rounded-md object-cover" />
+                          <p className="text-white/45 text-[9px] leading-tight">Placa ABC-1234. Veículo estacionado há 8h. Janelas escurecidas.</p>
+                        </div>
+                        <div className="flex justify-end mt-1.5">
+                          <span className="text-amber-400 text-[9px] font-semibold">Toque para responder →</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Alert card 3 — ALTO (slightly cut off) */}
+                    <div className="rounded-xl border border-white/10 overflow-hidden bg-[#161b22] flex" style={{maxHeight: 52}}>
+                      <div className="w-1 bg-orange-500 shrink-0" />
+                      <div className="p-2.5 flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <div className="flex items-center gap-1 bg-orange-500/20 px-1.5 py-0.5 rounded-md">
+                            <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                            <span className="text-orange-400 text-[9px] font-black">ALTO</span>
+                          </div>
+                          <span className="text-white/30 text-[9px]">14min atrás</span>
+                        </div>
+                        <p className="text-white text-xs font-bold">Comportamento suspeito</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tab bar */}
+                  <div className="mt-3 border-t border-white/10 bg-[#0d1117] px-2 pt-2 pb-4">
+                    <div className="flex justify-around">
+                      {[
+                        { icon: "🔔", label: "Alertas", active: true },
+                        { icon: "🕐", label: "Histórico", active: false },
+                        { icon: "🛡", label: "Status", active: false },
+                      ].map((tab, i) => (
+                        <div key={i} className={`flex flex-col items-center gap-0.5 px-3 py-1 rounded-lg ${tab.active ? "bg-amber-500/10" : ""}`}>
+                          <span className="text-base leading-none">{tab.icon}</span>
+                          <span className={`text-[8px] font-semibold ${tab.active ? "text-amber-400" : "text-white/30"}`}>{tab.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
