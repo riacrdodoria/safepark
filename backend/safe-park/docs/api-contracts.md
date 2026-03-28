@@ -1,4 +1,4 @@
-# Safe Park API Contracts For Replit Frontend
+# Safe Park API Contracts For Frontend
 
 ## Core Endpoints
 
@@ -64,4 +64,3 @@ Supported filters:
 
 - configured `CameraLink` graph
 - recent cross-camera transition events
-

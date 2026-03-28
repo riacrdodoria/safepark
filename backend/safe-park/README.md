@@ -1,6 +1,6 @@
 # Safe Park Backend MVP
 
-Backend-only Safe Park monorepo for Linux (`wo4`), prepared to serve a separate frontend built in Replit.
+Backend-only Safe Park monorepo for Linux (`wo4`), prepared to serve a separate web frontend.
 
 ## Project Path On `wo4`
 
@@ -144,7 +144,7 @@ More detail:
 
 ## Frontend Integration
 
-The future Replit frontend should use:
+The frontend should use:
 
 - `GET /dashboard/metrics`
 - `GET /events/`

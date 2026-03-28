@@ -2,7 +2,7 @@
 
 ## Scope
 
-This repository contains the backend and services for Safe Park running locally on Linux (`wo4`), designed to power a separate frontend built in Replit.
+This repository contains the backend and services for Safe Park running locally on Linux (`wo4`), designed to power a separate frontend application.
 
 ## Components
 
@@ -29,4 +29,3 @@ This repository contains the backend and services for Safe Park running locally 
 - add robust re-identification embeddings
 - add artifact lifecycle management for clips and snapshots
 - expose signed URLs and authz boundaries for SaaS deployment
-
