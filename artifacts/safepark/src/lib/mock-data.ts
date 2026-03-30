@@ -29,14 +29,46 @@ export interface SecurityEvent {
 }
 
 export const MOCK_CAMERAS: Camera[] = [
-  { id: 'cam-1', name: 'Entrada 01', status: 'online', type: 'Entrada', fps: 30, resolution: '4K', unit: 'Unidade Centro' },
-  { id: 'cam-2', name: 'Entrada 02', status: 'online', type: 'Entrada', fps: 30, resolution: '4K', unit: 'Unidade Centro' },
-  { id: 'cam-3', name: 'Pátio Norte A1', status: 'online', type: 'Pátio', fps: 24, resolution: '1080p', unit: 'Unidade Centro' },
-  { id: 'cam-4', name: 'Pátio Norte A2', status: 'online', type: 'Pátio', fps: 24, resolution: '1080p', unit: 'Unidade Centro' },
-  { id: 'cam-5', name: 'Corredor Leste C1', status: 'online', type: 'Corredor', fps: 15, resolution: '1080p', unit: 'Unidade Centro' },
-  { id: 'cam-6', name: 'Área Restrita', status: 'online', type: 'Restrita', fps: 30, resolution: '4K', unit: 'Unidade Centro' },
-  { id: 'cam-7', name: 'Saída 01', status: 'offline', type: 'Saída', fps: 0, resolution: '1080p', unit: 'Unidade Centro' },
-  { id: 'cam-8', name: 'Pátio Sul B1', status: 'online', type: 'Pátio', fps: 24, resolution: '1080p', unit: 'Unidade Centro' },
+  {
+    id: '841fa8a1-d341-45f8-a490-1c91f9dafab9',
+    name: 'Pátio Externo',
+    status: 'online',
+    type: 'Overview',
+    fps: 24,
+    resolution: '4K',
+    unit: 'Dois Irmãos',
+    previewUrl: '/demo/parking-demo-whatsapp-2026-03-27.mp4',
+  },
+  {
+    id: '47c89a10-98cc-4a56-87f5-5e2b71692335',
+    name: 'Acesso Pátio Interno',
+    status: 'online',
+    type: 'Entrada',
+    fps: 24,
+    resolution: '1080p',
+    unit: 'Dois Irmãos',
+    previewUrl: '/demo/parking-feed-02.mp4',
+  },
+  {
+    id: '54d98e47-1edd-418e-98ab-4bc1d08a98de',
+    name: 'Fundos Pátio Interno',
+    status: 'online',
+    type: 'Via',
+    fps: 24,
+    resolution: '1080p',
+    unit: 'Dois Irmãos',
+    previewUrl: '/demo/parking-feed-03.mp4',
+  },
+  {
+    id: '9ad7d773-bbb0-4333-ae39-0d9a53c37146',
+    name: 'Meio Pátio Interno',
+    status: 'online',
+    type: 'Overview',
+    fps: 24,
+    resolution: '1080p',
+    unit: 'Dois Irmãos',
+    previewUrl: '/demo/parking-feed-04.mp4',
+  },
 ];
 
 export const MOCK_EVENTS: SecurityEvent[] = [

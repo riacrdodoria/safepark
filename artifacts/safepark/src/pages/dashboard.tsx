@@ -10,6 +10,13 @@ import { Switch } from "@/components/ui/switch";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
+const CAMERA_DISPLAY_ORDER = [
+  "841fa8a1-d341-45f8-a490-1c91f9dafab9",
+  "47c89a10-98cc-4a56-87f5-5e2b71692335",
+  "54d98e47-1edd-418e-98ab-4bc1d08a98de",
+  "9ad7d773-bbb0-4333-ae39-0d9a53c37146",
+];
+
 function KPI({ title, value, sub, icon: Icon, trend, colorClass = "text-primary" }: any) {
   return (
     <motion.div 
@@ -40,7 +47,11 @@ export default function Dashboard() {
 
   const criticalEvents = events?.filter(e => e.severity === 'critical') || [];
   const onlineCameras = cameras?.filter(c => c.status === 'online') || [];
-  const activeFeedCameras = cameras?.filter((camera) => camera.previewUrl).slice(0, 4) || [];
+  const activeFeedCameras =
+    cameras
+      ?.filter((camera) => camera.previewUrl)
+      .sort((left, right) => CAMERA_DISPLAY_ORDER.indexOf(left.id) - CAMERA_DISPLAY_ORDER.indexOf(right.id))
+      .slice(0, 4) || [];
 
   return (
     <AppLayout>

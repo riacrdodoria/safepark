@@ -136,7 +136,7 @@ export type SystemStatusResponse = {
   stream_gateway_url: string;
 };
 
-const API_BASE_URL = (import.meta.env.VITE_SAFE_PARK_API_URL as string | undefined)?.replace(/\/$/, "") ?? "http://127.0.0.1:8000";
+const API_BASE_URL = (import.meta.env.VITE_SAFE_PARK_API_URL as string | undefined)?.replace(/\/$/, "") ?? "/api";
 
 const statusMap: Record<string, SecurityEvent["status"]> = {
   open: "Novo",
@@ -192,7 +192,7 @@ export function mapCamera(camera: BackendCamera): Camera {
     type: humanizeEventType(camera.type),
     fps: camera.status === "online" ? 24 : 0,
     resolution: camera.type === "overview" ? "4K" : "1080p",
-    unit: "Safe Park Centro",
+    unit: "Dois Irmãos",
     previewUrl,
   };
 }

@@ -95,10 +95,10 @@ export default function LoginPage() {
 
             <div className="pt-2">
               <Link
-                href="/dashboard"
+                href="/demo"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold transition-all shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 active:translate-y-0"
               >
-                Entrar no Painel <ArrowRight className="w-4 h-4" />
+                Entrar na Demo <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </form>
@@ -106,7 +106,7 @@ export default function LoginPage() {
           <div className="mt-10 pt-6 border-t border-border text-center">
             <p className="text-sm text-muted-foreground">Novo no sistema?</p>
             <Link
-              href="/landing"
+              href="/"
               className="text-sm text-foreground font-medium hover:text-primary transition-colors mt-1 inline-block"
             >
               Conheça a plataforma comercial →

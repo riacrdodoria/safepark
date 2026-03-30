@@ -9,12 +9,23 @@ import { LayoutGrid, Grid3X3, Maximize, Plus, Settings2, AlertTriangle } from "l
 import { useState } from "react";
 import { Link } from "wouter";
 
+const CAMERA_DISPLAY_ORDER = [
+  "841fa8a1-d341-45f8-a490-1c91f9dafab9",
+  "47c89a10-98cc-4a56-87f5-5e2b71692335",
+  "54d98e47-1edd-418e-98ab-4bc1d08a98de",
+  "9ad7d773-bbb0-4333-ae39-0d9a53c37146",
+];
+
 export default function CamerasPage() {
   const { data: cameras, isLoading } = useCameras();
   const { data: liveTracking } = useTrackingLive();
   const toggleVision = useToggleVision();
   const [gridMode, setGridMode] = useState<'2x2' | '3x3'>('3x3');
-  const activeCameras = cameras?.filter((camera) => camera.previewUrl).slice(0, 4) ?? [];
+  const activeCameras =
+    cameras
+      ?.filter((camera) => camera.previewUrl)
+      .sort((left, right) => CAMERA_DISPLAY_ORDER.indexOf(left.id) - CAMERA_DISPLAY_ORDER.indexOf(right.id))
+      .slice(0, 4) ?? [];
   const [expandedCameraId, setExpandedCameraId] = useState<string | null>(null);
   const expandedCamera = activeCameras.find((camera) => camera.id === expandedCameraId) ?? null;
 

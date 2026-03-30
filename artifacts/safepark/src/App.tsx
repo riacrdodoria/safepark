@@ -31,9 +31,10 @@ const queryClient = new QueryClient({
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={DashboardPage} />
+      <Route path="/" component={LandingPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/landing" component={LandingPage} />
+      <Route path="/demo" component={DashboardPage} />
       <Route path="/dashboard" component={DashboardPage} />
       
       <Route path="/cameras" component={CamerasPage} />

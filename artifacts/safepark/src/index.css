@@ -175,6 +175,16 @@
   .text-glow {
     text-shadow: 0 0 8px currentColor;
   }
+
+  .lp-root h1,
+  .lp-root h2,
+  .lp-root h3,
+  .lp-root h4,
+  .lp-root h5,
+  .lp-root h6 {
+    text-transform: none;
+    letter-spacing: normal;
+  }
 }
 
 @keyframes scan {
