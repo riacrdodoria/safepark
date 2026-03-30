@@ -15,7 +15,7 @@ SNAPSHOT_DIR = PROJECT_ROOT / "storage/snapshots"
 
 WORKER_SPECS: dict[str, dict[str, str]] = {
     "841fa8a1-d341-45f8-a490-1c91f9dafab9": {
-        "camera_name": "Demo WhatsApp 01",
+        "camera_name": "Pátio Externo",
         "video_path": "/home/ricardo/safe-park/storage/demo/videos/parking-demo-whatsapp-2026-03-27.mp4",
         "state_path": "/home/ricardo/safe-park/storage/logs/vision/841fa8a1-d341-45f8-a490-1c91f9dafab9.json",
         "snapshot_path": "/home/ricardo/safe-park/storage/snapshots/vision-841fa8a1-d341-45f8-a490-1c91f9dafab9.jpg",
@@ -23,7 +23,7 @@ WORKER_SPECS: dict[str, dict[str, str]] = {
         "pid_path": "/home/ricardo/safe-park/storage/logs/vision/841fa8a1-d341-45f8-a490-1c91f9dafab9.pid",
     },
     "47c89a10-98cc-4a56-87f5-5e2b71692335": {
-        "camera_name": "Entrada Principal 01",
+        "camera_name": "Acesso Pátio Interno",
         "video_path": "/home/ricardo/safe-park/storage/demo/videos/parking-feed-02.mp4",
         "state_path": "/home/ricardo/safe-park/storage/logs/vision/47c89a10-98cc-4a56-87f5-5e2b71692335.json",
         "snapshot_path": "/home/ricardo/safe-park/storage/snapshots/vision-47c89a10-98cc-4a56-87f5-5e2b71692335.jpg",
@@ -31,7 +31,7 @@ WORKER_SPECS: dict[str, dict[str, str]] = {
         "pid_path": "/home/ricardo/safe-park/storage/logs/vision/47c89a10-98cc-4a56-87f5-5e2b71692335.pid",
     },
     "54d98e47-1edd-418e-98ab-4bc1d08a98de": {
-        "camera_name": "Rampa Norte 02",
+        "camera_name": "Fundos Pátio Interno",
         "video_path": "/home/ricardo/safe-park/storage/demo/videos/parking-feed-03.mp4",
         "state_path": "/home/ricardo/safe-park/storage/logs/vision/54d98e47-1edd-418e-98ab-4bc1d08a98de.json",
         "snapshot_path": "/home/ricardo/safe-park/storage/snapshots/vision-54d98e47-1edd-418e-98ab-4bc1d08a98de.jpg",
@@ -39,7 +39,7 @@ WORKER_SPECS: dict[str, dict[str, str]] = {
         "pid_path": "/home/ricardo/safe-park/storage/logs/vision/54d98e47-1edd-418e-98ab-4bc1d08a98de.pid",
     },
     "9ad7d773-bbb0-4333-ae39-0d9a53c37146": {
-        "camera_name": "Pátio Coberto 03",
+        "camera_name": "Meio Pátio Interno",
         "video_path": "/home/ricardo/safe-park/storage/demo/videos/parking-feed-04.mp4",
         "state_path": "/home/ricardo/safe-park/storage/logs/vision/9ad7d773-bbb0-4333-ae39-0d9a53c37146.json",
         "snapshot_path": "/home/ricardo/safe-park/storage/snapshots/vision-9ad7d773-bbb0-4333-ae39-0d9a53c37146.jpg",
