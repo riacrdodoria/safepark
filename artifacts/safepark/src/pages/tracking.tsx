@@ -1,14 +1,20 @@
 import { AppLayout } from "@/components/layout/app-layout";
 import { UserSearch, Car, MapPin, Activity } from "lucide-react";
 import { StatusBadge } from "@/components/ui/status-badge";
-
-const TRACKED_ENTITIES = [
-  { id: 'Pessoa-984', type: 'person', status: 'Sem Origem Conhecida', lastSeen: 'Pátio Norte A2', timeActive: '18 min', risk: 'High' },
-  { id: 'Veículo-ABC1234', type: 'vehicle', status: 'Circulação Anômala', lastSeen: 'Corredor Leste C1', timeActive: '08 min', risk: 'Medium' },
-  { id: 'Pessoa-992', type: 'person', status: 'Vinculado', lastSeen: 'Saída 01', timeActive: '02 min', risk: 'Low', linkedTo: 'XYZ9876' },
-];
+import { useTrackingOverview } from "@/hooks/use-tracking";
 
 export default function TrackingPage() {
+  const { data } = useTrackingOverview();
+  const trackedEntities = data?.associations?.map((association) => ({
+    id: association.person_id,
+    type: 'person' as const,
+    status: association.active ? 'Vinculado' : 'Inativo',
+    lastSeen: association.vehicle_id,
+    timeActive: `${Math.round(association.confidence_score * 100)}%`,
+    risk: association.confidence_score > 0.8 ? 'Low' : 'Medium',
+    linkedTo: association.vehicle_id,
+  })) ?? [];
+
   return (
     <AppLayout>
       <div className="max-w-6xl mx-auto space-y-6">
@@ -18,7 +24,7 @@ export default function TrackingPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TRACKED_ENTITIES.map(entity => (
+          {trackedEntities.map(entity => (
             <div key={entity.id} className="glass-panel rounded-xl border border-border overflow-hidden tech-border relative group hover:border-primary/50 transition-colors">
               <div className="h-2 w-full absolute top-0 left-0 bg-muted overflow-hidden">
                 <div className={`h-full ${entity.risk === 'High' ? 'bg-destructive' : entity.risk === 'Medium' ? 'bg-warning' : 'bg-success'}`} style={{width: '100%'}}></div>

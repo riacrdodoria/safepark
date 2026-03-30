@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: safe-park-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: safepark
+      POSTGRES_USER: safepark
+      POSTGRES_PASSWORD: safepark
+    ports:
+      - "5432:5432"
+    volumes:
+      - safe_park_postgres:/var/lib/postgresql/data
+
+  go2rtc:
+    image: alexxit/go2rtc:1.9.7
+    container_name: safe-park-go2rtc
+    restart: unless-stopped
+    ports:
+      - "1984:1984"
+      - "8554:8554"
+      - "8555:8555/tcp"
+      - "8555:8555/udp"
+    volumes:
+      - ./infra/go2rtc/go2rtc.yaml:/config/go2rtc.yaml:ro
+      - ./storage/clips:/storage/clips
+      - ./storage/snapshots:/storage/snapshots
+
+volumes:
+  safe_park_postgres:
+

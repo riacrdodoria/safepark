@@ -10,6 +10,7 @@ export interface Camera {
   fps: number;
   resolution: string;
   unit: string;
+  previewUrl?: string;
 }
 
 export interface SecurityEvent {
